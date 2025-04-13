@@ -1,0 +1,9 @@
+numpy>=1.19.0
+torch>=1.7.0
+transformers>=4.0.0
+faiss-cpu>=1.7.0
+psycopg2-binary>=2.8.6
+pdfplumber>=0.7.0
+docx2txt>=0.8.0
+
+
