@@ -4,7 +4,7 @@ uvicorn==0.23.2
 torch>=1.7.0
 numpy==1.24.4
 transformers>=4.0.0
-sentence-transformers==2.2.2
+sentence-transformers>=2.5.0
 faiss-cpu==1.7.4
 
 psycopg2-binary==2.9.9
@@ -16,5 +16,3 @@ docx2txt==0.8
 
 pydantic==2.4.2
 typing-extensions==4.8.0
-
-
