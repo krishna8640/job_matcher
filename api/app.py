@@ -15,7 +15,12 @@ import shutil
 import sys
 
 # Add the job_search package to path
-sys.path.append('.')  # Adjust this path as needed for your environment
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(project_root)
+print(f"Added {project_root} to Python path")
+print(f"Current sys.path: {sys.path}")
+
+  # Adjust this path as needed for your environment
 
 # Import job_search modules
 from job_search.resume_parser import get_resume_text
