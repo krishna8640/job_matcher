@@ -11,7 +11,7 @@ import time
 import logging
 from logging.handlers import RotatingFileHandler
 
-# Set up logging
+# Set up logging first so we can log any issues with environment loading
 log_dir = "logs"
 os.makedirs(log_dir, exist_ok=True)
 log_file = os.path.join(log_dir, "job_fetch.log")
@@ -27,27 +27,45 @@ console_handler = logging.StreamHandler()
 console_handler.setFormatter(formatter)
 logger.addHandler(console_handler)
 
-# Load environment variables from .env file
-load_dotenv(dotenv_path=".env.new")
+# Try multiple possible locations for .env file
+possible_env_paths = [
+    ".env",                                  # Current directory
+    os.path.join(os.path.dirname(__file__), ".env"),  # Same directory as script
+    os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env")  # Parent directory
+]
 
-# Add these lines after load_dotenv() to clean any problematic values
+env_loaded = False
+for env_path in possible_env_paths:
+    if os.path.exists(env_path):
+        logger.info(f"Found .env file at: {env_path}")
+        load_dotenv(dotenv_path=env_path)
+        env_loaded = True
+        break
+
+if not env_loaded:
+    logger.error("No .env file found in any of the expected locations")
+
+# Log the environment variables (excluding sensitive data)
+logger.info(f"Database host: {os.getenv('DB_HOST', 'Not set')}")
+logger.info(f"Database name: {os.getenv('DB_NAME', 'Not set')}")
+logger.info(f"Database user: {os.getenv('DB_USER', 'Not set')}")
+logger.info(f"Jooble API key set: {'Yes' if os.getenv('JOOBLE_API_KEY') else 'No'}")
+
+# Set environment variables with fallbacks and cleaning
 DB_HOST = os.getenv("DB_HOST", "localhost").strip()
 DB_PORT = os.getenv("DB_PORT", "5433").strip().split("#")[0].strip()  # Remove comments
 DB_NAME = os.getenv("DB_NAME", "job_data").strip()
 DB_USER = os.getenv("DB_USER", "postgres").strip()
 DB_PASSWORD = os.getenv("DB_PASSWORD", "").strip()
-
 JOOBLE_API_KEY = os.getenv("JOOBLE_API_KEY", "").strip().split("#")[0].strip()
-
-
-
-# Jooble API credentials
-JOOBLE_API_KEY = os.getenv("JOOBLE_API_KEY")
 
 # Define the job categories to focus on
 STEM_JOBS = [
     "data scientist", 
     "software engineer",
+    "aerospace engineer",
+    'controls engineer',
+    "modelling engineer",
     "chemical engineer", 
     "mechanical engineer",
     "biomedical engineer",
@@ -80,12 +98,9 @@ HEALTHCARE_JOBS = [
 
 # Locations to search in (can be customized)
 LOCATIONS = [
-    "New York", 
-    "California", 
-    "Texas", 
-    "Massachusetts", 
-    "Washington",
-    "Remote"
+    "New York", "Los Angeles", "Chicago", "Houston", "Phoenix",
+    "Philadelphia", "San Antonio", "San Diego", "Dallas", "San Jose",
+    "Austin", "Jacksonville", "Columbus", "Indianapolis", "Charlotte"
 ]
 
 def connect_to_db():

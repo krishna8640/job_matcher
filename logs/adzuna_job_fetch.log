@@ -1,0 +1,342 @@
+2025-04-13 19:17:08,835 - adzuna_job_fetcher - INFO - Adzuna job fetching automation started
+2025-04-13 19:17:08,856 - adzuna_job_fetcher - ERROR - Unable to connect to the database: connection to server at "localhost" (::1), port 5433 failed: fe_sendauth: no password supplied
+
+2025-04-13 19:17:08,856 - adzuna_job_fetcher - ERROR - Failed to connect to the database for setup
+2025-04-13 19:17:08,856 - adzuna_job_fetcher - ERROR - Failed to set up database. Exiting.
+2025-04-13 19:17:49,505 - adzuna_job_fetcher - INFO - Adzuna job fetching automation started
+2025-04-13 19:17:49,531 - adzuna_job_fetcher - ERROR - Unable to connect to the database: connection to server at "localhost" (::1), port 5433 failed: fe_sendauth: no password supplied
+
+2025-04-13 19:17:49,533 - adzuna_job_fetcher - ERROR - Failed to connect to the database for setup
+2025-04-13 19:17:49,533 - adzuna_job_fetcher - ERROR - Failed to set up database. Exiting.
+2025-04-13 19:18:18,156 - adzuna_job_fetcher - INFO - Adzuna job fetching automation started
+2025-04-13 19:18:18,192 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:18:18,221 - adzuna_job_fetcher - INFO - Running initial job search
+2025-04-13 19:18:18,222 - adzuna_job_fetcher - INFO - Starting scheduled job search...
+2025-04-13 19:18:18,222 - adzuna_job_fetcher - INFO - Searching for 'data scientist' in '' (category: it-jobs)
+2025-04-13 19:18:18,248 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:18:18,249 - adzuna_job_fetcher - INFO - Fetching page 1 for 'data scientist' in ''...
+2025-04-13 19:18:18,249 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=data scientist, where=, category=it-jobs
+2025-04-13 19:18:18,587 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=data+scientist&category=it-jobs
+2025-04-13 19:18:18,587 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:18:18,587 - adzuna_job_fetcher - INFO - Total jobs inserted for 'data scientist' in '': 0
+2025-04-13 19:18:23,594 - adzuna_job_fetcher - INFO - Searching for 'software engineer' in '' (category: engineering)
+2025-04-13 19:18:23,621 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:18:23,622 - adzuna_job_fetcher - INFO - Fetching page 1 for 'software engineer' in ''...
+2025-04-13 19:18:23,622 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=software engineer, where=, category=engineering
+2025-04-13 19:18:23,910 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=software+engineer&category=engineering
+2025-04-13 19:18:23,915 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:18:23,915 - adzuna_job_fetcher - INFO - Total jobs inserted for 'software engineer' in '': 0
+2025-04-13 19:18:28,917 - adzuna_job_fetcher - INFO - Searching for 'Aerospace engineer' in '' (category: engineering)
+2025-04-13 19:18:28,945 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:18:28,945 - adzuna_job_fetcher - INFO - Fetching page 1 for 'Aerospace engineer' in ''...
+2025-04-13 19:18:28,945 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=Aerospace engineer, where=, category=engineering
+2025-04-13 19:18:29,231 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=Aerospace+engineer&category=engineering
+2025-04-13 19:18:29,231 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:18:29,235 - adzuna_job_fetcher - INFO - Total jobs inserted for 'Aerospace engineer' in '': 0
+2025-04-13 19:18:34,236 - adzuna_job_fetcher - INFO - Searching for 'controls engineer' in '' (category: engineering)
+2025-04-13 19:18:34,365 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:18:34,365 - adzuna_job_fetcher - INFO - Fetching page 1 for 'controls engineer' in ''...
+2025-04-13 19:18:34,365 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=controls engineer, where=, category=engineering
+2025-04-13 19:18:34,656 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=controls+engineer&category=engineering
+2025-04-13 19:18:34,656 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:18:34,656 - adzuna_job_fetcher - INFO - Total jobs inserted for 'controls engineer' in '': 0
+2025-04-13 19:18:39,658 - adzuna_job_fetcher - INFO - Searching for 'chemical engineer' in '' (category: engineering)
+2025-04-13 19:18:39,687 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:18:39,687 - adzuna_job_fetcher - INFO - Fetching page 1 for 'chemical engineer' in ''...
+2025-04-13 19:18:39,687 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=chemical engineer, where=, category=engineering
+2025-04-13 19:18:39,986 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=chemical+engineer&category=engineering
+2025-04-13 19:18:39,986 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:18:39,986 - adzuna_job_fetcher - INFO - Total jobs inserted for 'chemical engineer' in '': 0
+2025-04-13 19:18:44,989 - adzuna_job_fetcher - INFO - Searching for 'mechanical engineer' in '' (category: engineering)
+2025-04-13 19:18:45,018 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:18:45,018 - adzuna_job_fetcher - INFO - Fetching page 1 for 'mechanical engineer' in ''...
+2025-04-13 19:18:45,018 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=mechanical engineer, where=, category=engineering
+2025-04-13 19:18:45,296 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=mechanical+engineer&category=engineering
+2025-04-13 19:18:45,296 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:18:45,305 - adzuna_job_fetcher - INFO - Total jobs inserted for 'mechanical engineer' in '': 0
+2025-04-13 19:18:50,306 - adzuna_job_fetcher - INFO - Searching for 'biomedical engineer' in '' (category: engineering)
+2025-04-13 19:18:50,331 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:18:50,331 - adzuna_job_fetcher - INFO - Fetching page 1 for 'biomedical engineer' in ''...
+2025-04-13 19:18:50,331 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=biomedical engineer, where=, category=engineering
+2025-04-13 19:18:50,624 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=biomedical+engineer&category=engineering
+2025-04-13 19:18:50,624 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:18:50,624 - adzuna_job_fetcher - INFO - Total jobs inserted for 'biomedical engineer' in '': 0
+2025-04-13 19:18:55,625 - adzuna_job_fetcher - INFO - Searching for 'electrical engineer' in '' (category: engineering)
+2025-04-13 19:18:55,652 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:18:55,652 - adzuna_job_fetcher - INFO - Fetching page 1 for 'electrical engineer' in ''...
+2025-04-13 19:18:55,652 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=electrical engineer, where=, category=engineering
+2025-04-13 19:18:55,946 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=electrical+engineer&category=engineering
+2025-04-13 19:18:55,946 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:18:55,947 - adzuna_job_fetcher - INFO - Total jobs inserted for 'electrical engineer' in '': 0
+2025-04-13 19:19:00,948 - adzuna_job_fetcher - INFO - Searching for 'environmental scientist' in '' (category: None)
+2025-04-13 19:19:00,975 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:19:00,975 - adzuna_job_fetcher - INFO - Fetching page 1 for 'environmental scientist' in ''...
+2025-04-13 19:19:00,975 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=environmental scientist, where=, category=None
+2025-04-13 19:19:01,275 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=environmental+scientist
+2025-04-13 19:19:01,275 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:19:01,275 - adzuna_job_fetcher - INFO - Total jobs inserted for 'environmental scientist' in '': 0
+2025-04-13 19:19:06,284 - adzuna_job_fetcher - INFO - Searching for 'mathematician' in '' (category: None)
+2025-04-13 19:19:06,310 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:19:06,310 - adzuna_job_fetcher - INFO - Fetching page 1 for 'mathematician' in ''...
+2025-04-13 19:19:06,311 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=mathematician, where=, category=None
+2025-04-13 19:19:06,599 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=mathematician
+2025-04-13 19:19:06,600 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:19:06,600 - adzuna_job_fetcher - INFO - Total jobs inserted for 'mathematician' in '': 0
+2025-04-13 19:19:11,601 - adzuna_job_fetcher - INFO - Searching for 'statistician' in '' (category: None)
+2025-04-13 19:19:11,733 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:19:11,734 - adzuna_job_fetcher - INFO - Fetching page 1 for 'statistician' in ''...
+2025-04-13 19:19:11,734 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=statistician, where=, category=None
+2025-04-13 19:19:12,029 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=statistician
+2025-04-13 19:19:12,030 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:19:12,031 - adzuna_job_fetcher - INFO - Total jobs inserted for 'statistician' in '': 0
+2025-04-13 19:19:17,031 - adzuna_job_fetcher - INFO - Searching for 'research scientist' in '' (category: None)
+2025-04-13 19:19:17,166 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:19:17,167 - adzuna_job_fetcher - INFO - Fetching page 1 for 'research scientist' in ''...
+2025-04-13 19:19:17,167 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=research scientist, where=, category=None
+2025-04-13 19:19:17,454 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=research+scientist
+2025-04-13 19:19:17,456 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:19:17,456 - adzuna_job_fetcher - INFO - Total jobs inserted for 'research scientist' in '': 0
+2025-04-13 19:19:22,457 - adzuna_job_fetcher - INFO - Searching for 'research assistant' in '' (category: None)
+2025-04-13 19:19:22,487 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:19:22,488 - adzuna_job_fetcher - INFO - Fetching page 1 for 'research assistant' in ''...
+2025-04-13 19:19:22,488 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=research assistant, where=, category=None
+2025-04-13 19:19:22,874 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=research+assistant
+2025-04-13 19:19:22,875 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:19:22,876 - adzuna_job_fetcher - INFO - Total jobs inserted for 'research assistant' in '': 0
+2025-04-13 19:19:27,876 - adzuna_job_fetcher - INFO - Searching for 'lab technician' in '' (category: None)
+2025-04-13 19:19:27,908 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:19:27,908 - adzuna_job_fetcher - INFO - Fetching page 1 for 'lab technician' in ''...
+2025-04-13 19:19:27,908 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=lab technician, where=, category=None
+2025-04-13 19:19:28,212 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=lab+technician
+2025-04-13 19:19:28,213 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:19:28,213 - adzuna_job_fetcher - INFO - Total jobs inserted for 'lab technician' in '': 0
+2025-04-13 19:19:33,214 - adzuna_job_fetcher - INFO - Searching for 'postdoctoral researcher' in '' (category: None)
+2025-04-13 19:19:33,247 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:19:33,247 - adzuna_job_fetcher - INFO - Fetching page 1 for 'postdoctoral researcher' in ''...
+2025-04-13 19:19:33,247 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=postdoctoral researcher, where=, category=None
+2025-04-13 19:19:33,533 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=postdoctoral+researcher
+2025-04-13 19:19:33,533 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:19:33,533 - adzuna_job_fetcher - INFO - Total jobs inserted for 'postdoctoral researcher' in '': 0
+2025-04-13 19:19:38,535 - adzuna_job_fetcher - INFO - Searching for 'research associate' in '' (category: None)
+2025-04-13 19:19:38,571 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:19:38,571 - adzuna_job_fetcher - INFO - Fetching page 1 for 'research associate' in ''...
+2025-04-13 19:19:38,571 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=research associate, where=, category=None
+2025-04-13 19:19:38,859 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=research+associate
+2025-04-13 19:19:38,860 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:19:38,860 - adzuna_job_fetcher - INFO - Total jobs inserted for 'research associate' in '': 0
+2025-04-13 19:19:43,862 - adzuna_job_fetcher - INFO - Searching for 'clinical researcher' in '' (category: None)
+2025-04-13 19:19:43,888 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:19:43,889 - adzuna_job_fetcher - INFO - Fetching page 1 for 'clinical researcher' in ''...
+2025-04-13 19:19:43,889 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=clinical researcher, where=, category=None
+2025-04-13 19:19:44,177 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=clinical+researcher
+2025-04-13 19:19:44,177 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:19:44,177 - adzuna_job_fetcher - INFO - Total jobs inserted for 'clinical researcher' in '': 0
+2025-04-13 19:19:49,178 - adzuna_job_fetcher - INFO - Searching for 'physician' in '' (category: healthcare-nursing-social-services)
+2025-04-13 19:19:49,207 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:19:49,207 - adzuna_job_fetcher - INFO - Fetching page 1 for 'physician' in ''...
+2025-04-13 19:19:49,207 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=physician, where=, category=healthcare-nursing-social-services
+2025-04-13 19:19:49,492 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=physician&category=healthcare-nursing-social-services
+2025-04-13 19:19:49,493 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:19:49,493 - adzuna_job_fetcher - INFO - Total jobs inserted for 'physician' in '': 0
+2025-04-13 19:19:54,494 - adzuna_job_fetcher - INFO - Searching for 'nurse practitioner' in '' (category: healthcare-nursing-social-services)
+2025-04-13 19:19:54,521 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:19:54,522 - adzuna_job_fetcher - INFO - Fetching page 1 for 'nurse practitioner' in ''...
+2025-04-13 19:19:54,522 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=nurse practitioner, where=, category=healthcare-nursing-social-services
+2025-04-13 19:19:54,825 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=nurse+practitioner&category=healthcare-nursing-social-services
+2025-04-13 19:19:54,826 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:19:54,826 - adzuna_job_fetcher - INFO - Total jobs inserted for 'nurse practitioner' in '': 0
+2025-04-13 19:19:59,827 - adzuna_job_fetcher - INFO - Searching for 'registered nurse' in '' (category: healthcare-nursing-social-services)
+2025-04-13 19:19:59,856 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:19:59,857 - adzuna_job_fetcher - INFO - Fetching page 1 for 'registered nurse' in ''...
+2025-04-13 19:19:59,857 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=registered nurse, where=, category=healthcare-nursing-social-services
+2025-04-13 19:20:00,156 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=registered+nurse&category=healthcare-nursing-social-services
+2025-04-13 19:20:00,158 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:20:00,158 - adzuna_job_fetcher - INFO - Total jobs inserted for 'registered nurse' in '': 0
+2025-04-13 19:20:05,159 - adzuna_job_fetcher - INFO - Searching for 'pharmacist' in '' (category: healthcare-nursing-social-services)
+2025-04-13 19:20:05,191 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:20:05,191 - adzuna_job_fetcher - INFO - Fetching page 1 for 'pharmacist' in ''...
+2025-04-13 19:20:05,191 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=pharmacist, where=, category=healthcare-nursing-social-services
+2025-04-13 19:20:05,479 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=pharmacist&category=healthcare-nursing-social-services
+2025-04-13 19:20:05,480 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:20:05,480 - adzuna_job_fetcher - INFO - Total jobs inserted for 'pharmacist' in '': 0
+2025-04-13 19:20:10,482 - adzuna_job_fetcher - INFO - Searching for 'physical therapist' in '' (category: healthcare-nursing-social-services)
+2025-04-13 19:20:10,508 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:20:10,509 - adzuna_job_fetcher - INFO - Fetching page 1 for 'physical therapist' in ''...
+2025-04-13 19:20:10,509 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=physical therapist, where=, category=healthcare-nursing-social-services
+2025-04-13 19:20:10,805 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=physical+therapist&category=healthcare-nursing-social-services
+2025-04-13 19:20:10,805 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:20:10,806 - adzuna_job_fetcher - INFO - Total jobs inserted for 'physical therapist' in '': 0
+2025-04-13 19:20:15,807 - adzuna_job_fetcher - INFO - Searching for 'occupational therapist' in '' (category: healthcare-nursing-social-services)
+2025-04-13 19:20:15,837 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:20:15,837 - adzuna_job_fetcher - INFO - Fetching page 1 for 'occupational therapist' in ''...
+2025-04-13 19:20:15,837 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=occupational therapist, where=, category=healthcare-nursing-social-services
+2025-04-13 19:20:16,122 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=occupational+therapist&category=healthcare-nursing-social-services
+2025-04-13 19:20:16,123 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:20:16,123 - adzuna_job_fetcher - INFO - Total jobs inserted for 'occupational therapist' in '': 0
+2025-04-13 19:20:21,125 - adzuna_job_fetcher - INFO - Searching for 'medical technologist' in '' (category: healthcare-nursing-social-services)
+2025-04-13 19:20:21,154 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:20:21,154 - adzuna_job_fetcher - INFO - Fetching page 1 for 'medical technologist' in ''...
+2025-04-13 19:20:21,154 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=medical technologist, where=, category=healthcare-nursing-social-services
+2025-04-13 19:20:21,455 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=medical+technologist&category=healthcare-nursing-social-services
+2025-04-13 19:20:21,456 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:20:21,456 - adzuna_job_fetcher - INFO - Total jobs inserted for 'medical technologist' in '': 0
+2025-04-13 19:20:26,457 - adzuna_job_fetcher - INFO - Searching for 'radiologist' in '' (category: healthcare-nursing-social-services)
+2025-04-13 19:20:26,483 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:20:26,483 - adzuna_job_fetcher - INFO - Fetching page 1 for 'radiologist' in ''...
+2025-04-13 19:20:26,484 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=radiologist, where=, category=healthcare-nursing-social-services
+2025-04-13 19:20:26,852 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=radiologist&category=healthcare-nursing-social-services
+2025-04-13 19:20:26,853 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:20:26,853 - adzuna_job_fetcher - INFO - Total jobs inserted for 'radiologist' in '': 0
+2025-04-13 19:20:31,854 - adzuna_job_fetcher - INFO - Searching for 'healthcare analyst' in '' (category: healthcare-nursing-social-services)
+2025-04-13 19:20:31,882 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:20:31,882 - adzuna_job_fetcher - INFO - Fetching page 1 for 'healthcare analyst' in ''...
+2025-04-13 19:20:31,882 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=healthcare analyst, where=, category=healthcare-nursing-social-services
+2025-04-13 19:20:32,168 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=healthcare+analyst&category=healthcare-nursing-social-services
+2025-04-13 19:20:32,169 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:20:32,169 - adzuna_job_fetcher - INFO - Total jobs inserted for 'healthcare analyst' in '': 0
+2025-04-13 19:20:37,170 - adzuna_job_fetcher - INFO - Job search completed. Total new jobs added: 0
+2025-04-13 19:20:37,171 - adzuna_job_fetcher - INFO - Scheduled job search to run at 01:00 and 13:00 daily
+2025-04-13 19:25:04,768 - adzuna_job_fetcher - INFO - Adzuna job fetching automation started
+2025-04-13 19:25:04,799 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:25:04,812 - adzuna_job_fetcher - INFO - Running initial job search
+2025-04-13 19:25:04,812 - adzuna_job_fetcher - INFO - Starting scheduled job search...
+2025-04-13 19:25:04,812 - adzuna_job_fetcher - INFO - Searching for 'data scientist' in 'New York' (category: it-jobs)
+2025-04-13 19:25:04,951 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:25:04,952 - adzuna_job_fetcher - INFO - Fetching page 1 for 'data scientist' in 'New York'...
+2025-04-13 19:25:04,952 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=data scientist, where=New York, category=it-jobs
+2025-04-13 19:25:05,317 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=data+scientist&where=New+York&category=it-jobs
+2025-04-13 19:25:05,317 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:25:05,327 - adzuna_job_fetcher - INFO - Total jobs inserted for 'data scientist' in 'New York': 0
+2025-04-13 19:25:10,329 - adzuna_job_fetcher - INFO - Searching for 'data scientist' in 'Los Angeles' (category: it-jobs)
+2025-04-13 19:25:10,356 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:25:10,357 - adzuna_job_fetcher - INFO - Fetching page 1 for 'data scientist' in 'Los Angeles'...
+2025-04-13 19:25:10,357 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=data scientist, where=Los Angeles, category=it-jobs
+2025-04-13 19:25:10,647 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=data+scientist&where=Los+Angeles&category=it-jobs
+2025-04-13 19:25:10,647 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:25:10,647 - adzuna_job_fetcher - INFO - Total jobs inserted for 'data scientist' in 'Los Angeles': 0
+2025-04-13 19:25:15,653 - adzuna_job_fetcher - INFO - Searching for 'data scientist' in 'Chicago' (category: it-jobs)
+2025-04-13 19:25:15,681 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:25:15,682 - adzuna_job_fetcher - INFO - Fetching page 1 for 'data scientist' in 'Chicago'...
+2025-04-13 19:25:15,682 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=data scientist, where=Chicago, category=it-jobs
+2025-04-13 19:25:15,972 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=data+scientist&where=Chicago&category=it-jobs
+2025-04-13 19:25:15,972 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:25:15,972 - adzuna_job_fetcher - INFO - Total jobs inserted for 'data scientist' in 'Chicago': 0
+2025-04-13 19:25:20,973 - adzuna_job_fetcher - INFO - Searching for 'data scientist' in 'Houston' (category: it-jobs)
+2025-04-13 19:25:21,003 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:25:21,003 - adzuna_job_fetcher - INFO - Fetching page 1 for 'data scientist' in 'Houston'...
+2025-04-13 19:25:21,004 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=data scientist, where=Houston, category=it-jobs
+2025-04-13 19:25:21,298 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=data+scientist&where=Houston&category=it-jobs
+2025-04-13 19:25:21,299 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:25:21,299 - adzuna_job_fetcher - INFO - Total jobs inserted for 'data scientist' in 'Houston': 0
+2025-04-13 19:25:26,299 - adzuna_job_fetcher - INFO - Searching for 'data scientist' in 'Phoenix' (category: it-jobs)
+2025-04-13 19:25:26,328 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:25:26,328 - adzuna_job_fetcher - INFO - Fetching page 1 for 'data scientist' in 'Phoenix'...
+2025-04-13 19:25:26,328 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=data scientist, where=Phoenix, category=it-jobs
+2025-04-13 19:25:26,624 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=data+scientist&where=Phoenix&category=it-jobs
+2025-04-13 19:25:26,625 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:25:26,625 - adzuna_job_fetcher - INFO - Total jobs inserted for 'data scientist' in 'Phoenix': 0
+2025-04-13 19:25:31,626 - adzuna_job_fetcher - INFO - Searching for 'data scientist' in 'Philadelphia' (category: it-jobs)
+2025-04-13 19:25:31,654 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:25:31,654 - adzuna_job_fetcher - INFO - Fetching page 1 for 'data scientist' in 'Philadelphia'...
+2025-04-13 19:25:31,654 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=data scientist, where=Philadelphia, category=it-jobs
+2025-04-13 19:25:31,970 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=data+scientist&where=Philadelphia&category=it-jobs
+2025-04-13 19:25:31,975 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:25:31,975 - adzuna_job_fetcher - INFO - Total jobs inserted for 'data scientist' in 'Philadelphia': 0
+2025-04-13 19:25:36,976 - adzuna_job_fetcher - INFO - Searching for 'data scientist' in 'San Antonio' (category: it-jobs)
+2025-04-13 19:25:37,004 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:25:37,005 - adzuna_job_fetcher - INFO - Fetching page 1 for 'data scientist' in 'San Antonio'...
+2025-04-13 19:25:37,005 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=data scientist, where=San Antonio, category=it-jobs
+2025-04-13 19:25:37,290 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=data+scientist&where=San+Antonio&category=it-jobs
+2025-04-13 19:25:37,290 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:25:37,290 - adzuna_job_fetcher - INFO - Total jobs inserted for 'data scientist' in 'San Antonio': 0
+2025-04-13 19:25:42,296 - adzuna_job_fetcher - INFO - Searching for 'data scientist' in 'San Diego' (category: it-jobs)
+2025-04-13 19:25:42,325 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:25:42,326 - adzuna_job_fetcher - INFO - Fetching page 1 for 'data scientist' in 'San Diego'...
+2025-04-13 19:25:42,326 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=data scientist, where=San Diego, category=it-jobs
+2025-04-13 19:25:42,617 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=data+scientist&where=San+Diego&category=it-jobs
+2025-04-13 19:25:42,618 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:25:42,618 - adzuna_job_fetcher - INFO - Total jobs inserted for 'data scientist' in 'San Diego': 0
+2025-04-13 19:25:47,619 - adzuna_job_fetcher - INFO - Searching for 'data scientist' in 'Dallas' (category: it-jobs)
+2025-04-13 19:25:47,750 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:25:47,750 - adzuna_job_fetcher - INFO - Fetching page 1 for 'data scientist' in 'Dallas'...
+2025-04-13 19:25:47,750 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=data scientist, where=Dallas, category=it-jobs
+2025-04-13 19:25:48,040 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=data+scientist&where=Dallas&category=it-jobs
+2025-04-13 19:25:48,040 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:25:48,040 - adzuna_job_fetcher - INFO - Total jobs inserted for 'data scientist' in 'Dallas': 0
+2025-04-13 19:25:53,043 - adzuna_job_fetcher - INFO - Searching for 'data scientist' in 'San Jose' (category: it-jobs)
+2025-04-13 19:25:53,071 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:25:53,073 - adzuna_job_fetcher - INFO - Fetching page 1 for 'data scientist' in 'San Jose'...
+2025-04-13 19:25:53,073 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=data scientist, where=San Jose, category=it-jobs
+2025-04-13 19:25:53,361 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=data+scientist&where=San+Jose&category=it-jobs
+2025-04-13 19:25:53,361 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:25:53,361 - adzuna_job_fetcher - INFO - Total jobs inserted for 'data scientist' in 'San Jose': 0
+2025-04-13 19:25:58,363 - adzuna_job_fetcher - INFO - Searching for 'data scientist' in 'Austin' (category: it-jobs)
+2025-04-13 19:25:58,390 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:25:58,390 - adzuna_job_fetcher - INFO - Fetching page 1 for 'data scientist' in 'Austin'...
+2025-04-13 19:25:58,390 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=data scientist, where=Austin, category=it-jobs
+2025-04-13 19:25:58,680 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=data+scientist&where=Austin&category=it-jobs
+2025-04-13 19:25:58,688 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:25:58,688 - adzuna_job_fetcher - INFO - Total jobs inserted for 'data scientist' in 'Austin': 0
+2025-04-13 19:26:03,689 - adzuna_job_fetcher - INFO - Searching for 'data scientist' in 'Jacksonville' (category: it-jobs)
+2025-04-13 19:26:03,713 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:26:03,713 - adzuna_job_fetcher - INFO - Fetching page 1 for 'data scientist' in 'Jacksonville'...
+2025-04-13 19:26:03,713 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=data scientist, where=Jacksonville, category=it-jobs
+2025-04-13 19:26:04,000 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=data+scientist&where=Jacksonville&category=it-jobs
+2025-04-13 19:26:04,000 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:26:04,000 - adzuna_job_fetcher - INFO - Total jobs inserted for 'data scientist' in 'Jacksonville': 0
+2025-04-13 19:26:09,009 - adzuna_job_fetcher - INFO - Searching for 'data scientist' in 'Columbus' (category: it-jobs)
+2025-04-13 19:26:09,036 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:26:09,039 - adzuna_job_fetcher - INFO - Fetching page 1 for 'data scientist' in 'Columbus'...
+2025-04-13 19:26:09,040 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=data scientist, where=Columbus, category=it-jobs
+2025-04-13 19:26:09,400 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=data+scientist&where=Columbus&category=it-jobs
+2025-04-13 19:26:09,400 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:26:09,400 - adzuna_job_fetcher - INFO - Total jobs inserted for 'data scientist' in 'Columbus': 0
+2025-04-13 19:26:14,407 - adzuna_job_fetcher - INFO - Searching for 'data scientist' in 'Indianapolis' (category: it-jobs)
+2025-04-13 19:26:14,434 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:26:14,435 - adzuna_job_fetcher - INFO - Fetching page 1 for 'data scientist' in 'Indianapolis'...
+2025-04-13 19:26:14,435 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=data scientist, where=Indianapolis, category=it-jobs
+2025-04-13 19:26:14,734 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=data+scientist&where=Indianapolis&category=it-jobs
+2025-04-13 19:26:14,740 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:26:14,740 - adzuna_job_fetcher - INFO - Total jobs inserted for 'data scientist' in 'Indianapolis': 0
+2025-04-13 19:26:19,741 - adzuna_job_fetcher - INFO - Searching for 'data scientist' in 'Charlotte' (category: it-jobs)
+2025-04-13 19:26:19,771 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:26:19,771 - adzuna_job_fetcher - INFO - Fetching page 1 for 'data scientist' in 'Charlotte'...
+2025-04-13 19:26:19,771 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=data scientist, where=Charlotte, category=it-jobs
+2025-04-13 19:26:20,061 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=data+scientist&where=Charlotte&category=it-jobs
+2025-04-13 19:26:20,061 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:26:20,061 - adzuna_job_fetcher - INFO - Total jobs inserted for 'data scientist' in 'Charlotte': 0
+2025-04-13 19:26:25,066 - adzuna_job_fetcher - INFO - Searching for 'software engineer' in 'New York' (category: engineering)
+2025-04-13 19:26:25,095 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:26:25,095 - adzuna_job_fetcher - INFO - Fetching page 1 for 'software engineer' in 'New York'...
+2025-04-13 19:26:25,095 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=software engineer, where=New York, category=engineering
+2025-04-13 19:26:25,387 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=software+engineer&where=New+York&category=engineering
+2025-04-13 19:26:25,387 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:26:25,387 - adzuna_job_fetcher - INFO - Total jobs inserted for 'software engineer' in 'New York': 0
+2025-04-13 19:26:30,390 - adzuna_job_fetcher - INFO - Searching for 'software engineer' in 'Los Angeles' (category: engineering)
+2025-04-13 19:26:30,422 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:26:30,423 - adzuna_job_fetcher - INFO - Fetching page 1 for 'software engineer' in 'Los Angeles'...
+2025-04-13 19:26:30,423 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=software engineer, where=Los Angeles, category=engineering
+2025-04-13 19:26:30,710 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=software+engineer&where=Los+Angeles&category=engineering
+2025-04-13 19:26:30,710 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:26:30,710 - adzuna_job_fetcher - INFO - Total jobs inserted for 'software engineer' in 'Los Angeles': 0
+2025-04-13 19:26:35,716 - adzuna_job_fetcher - INFO - Searching for 'software engineer' in 'Chicago' (category: engineering)
+2025-04-13 19:26:35,742 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:26:35,743 - adzuna_job_fetcher - INFO - Fetching page 1 for 'software engineer' in 'Chicago'...
+2025-04-13 19:26:35,743 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=software engineer, where=Chicago, category=engineering
+2025-04-13 19:26:36,036 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=software+engineer&where=Chicago&category=engineering
+2025-04-13 19:26:36,037 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:26:36,037 - adzuna_job_fetcher - INFO - Total jobs inserted for 'software engineer' in 'Chicago': 0
+2025-04-13 19:26:41,038 - adzuna_job_fetcher - INFO - Searching for 'software engineer' in 'Houston' (category: engineering)
+2025-04-13 19:26:41,063 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:26:41,066 - adzuna_job_fetcher - INFO - Fetching page 1 for 'software engineer' in 'Houston'...
+2025-04-13 19:26:41,066 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=software engineer, where=Houston, category=engineering
+2025-04-13 19:26:41,356 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=software+engineer&where=Houston&category=engineering
+2025-04-13 19:26:41,357 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:26:41,357 - adzuna_job_fetcher - INFO - Total jobs inserted for 'software engineer' in 'Houston': 0
+2025-04-13 19:26:46,359 - adzuna_job_fetcher - INFO - Searching for 'software engineer' in 'Phoenix' (category: engineering)
+2025-04-13 19:26:46,386 - adzuna_job_fetcher - INFO - Successfully connected to the database!
+2025-04-13 19:26:46,386 - adzuna_job_fetcher - INFO - Fetching page 1 for 'software engineer' in 'Phoenix'...
+2025-04-13 19:26:46,387 - adzuna_job_fetcher - INFO - Sending API request: page=1, what=software engineer, where=Phoenix, category=engineering
+2025-04-13 19:26:46,690 - adzuna_job_fetcher - ERROR - Error fetching jobs: 400 Client Error: Bad Request for url: https://api.adzuna.com/v1/api/jobs/us/search/1?results_per_page=100&content-type=application%2Fjson&what=software+engineer&where=Phoenix&category=engineering
+2025-04-13 19:26:46,690 - adzuna_job_fetcher - INFO - No more results found after page 0
+2025-04-13 19:26:46,690 - adzuna_job_fetcher - INFO - Total jobs inserted for 'software engineer' in 'Phoenix': 0

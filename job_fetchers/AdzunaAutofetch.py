@@ -5,18 +5,19 @@ import psycopg2
 from psycopg2.extras import Json
 from dotenv import load_dotenv
 from datetime import datetime
-import time
+import json
 import schedule
+import time
 import logging
 from logging.handlers import RotatingFileHandler
 
-# Set up logging
+# Set up logging first so we can log any issues with environment loading
 log_dir = "logs"
 os.makedirs(log_dir, exist_ok=True)
-log_file = os.path.join(log_dir, "adzuna_job_fetch.log")
+log_file = os.path.join(log_dir, "job_fetch.log")
 
 # Configure logging
-logger = logging.getLogger("adzuna_job_fetcher")
+logger = logging.getLogger("job_fetcher")
 logger.setLevel(logging.INFO)
 handler = RotatingFileHandler(log_file, maxBytes=10485760, backupCount=5)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -26,10 +27,31 @@ console_handler = logging.StreamHandler()
 console_handler.setFormatter(formatter)
 logger.addHandler(console_handler)
 
-# Load environment variables from .env file
-load_dotenv(dotenv_path=".env.new")
+# Try multiple possible locations for .env file
+possible_env_paths = [
+    ".env",                                  # Current directory
+    os.path.join(os.path.dirname(__file__), ".env"),  # Same directory as script
+    os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env")  # Parent directory
+]
 
-# Add these lines after load_dotenv() to clean any problematic values
+env_loaded = False
+for env_path in possible_env_paths:
+    if os.path.exists(env_path):
+        logger.info(f"Found .env file at: {env_path}")
+        load_dotenv(dotenv_path=env_path)
+        env_loaded = True
+        break
+
+if not env_loaded:
+    logger.error("No .env file found in any of the expected locations")
+
+# Log the environment variables (excluding sensitive data)
+logger.info(f"Database host: {os.getenv('DB_HOST', 'Not set')}")
+logger.info(f"Database name: {os.getenv('DB_NAME', 'Not set')}")
+logger.info(f"Database user: {os.getenv('DB_USER', 'Not set')}")
+logger.info(f"Jooble API key set: {'Yes' if os.getenv('JOOBLE_API_KEY') else 'No'}")
+
+# Set environment variables with fallbacks and cleaning
 DB_HOST = os.getenv("DB_HOST", "localhost").strip()
 DB_PORT = os.getenv("DB_PORT", "5433").strip().split("#")[0].strip()  # Remove comments
 DB_NAME = os.getenv("DB_NAME", "job_data").strip()
@@ -44,6 +66,8 @@ ADZUNA_APP_KEY = os.getenv("ADZUNA_APP_KEY")
 STEM_JOBS = [
     "data scientist", 
     "software engineer",
+    "Aerospace engineer",
+    "controls engineer",
     "chemical engineer", 
     "mechanical engineer",
     "biomedical engineer",
@@ -74,15 +98,15 @@ HEALTHCARE_JOBS = [
     "healthcare analyst"
 ]
 
-# Define locations to search in
 LOCATIONS = [
-    "New York", 
-    "California", 
-    "Texas", 
-    "Massachusetts", 
-    "Washington",
-    ""  # Empty string for nationwide search
+    "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida",
+    "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine",
+    "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska",
+    "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio",
+    "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas",
+    "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
 ]
+
 
 # 2. Database Connection Function
 def connect_to_db():
@@ -252,7 +276,7 @@ def parse_date(date_str):
     except ValueError:
         return None
 
-def fetch_and_store_jobs(what=None, where=None, category=None, max_pages=5, country="us"):
+def fetch_and_store_jobs(what=None, where=None, category=None, max_pages=10, country="us"):
     """Fetch jobs from Adzuna API and store them in the database"""
     conn = connect_to_db()
     if not conn:
@@ -434,7 +458,7 @@ def schedule_jobs():
     # Run the scheduler loop
     while True:
         schedule.run_pending()
-        time.sleep(60)  # Check every minute
+        time.sleep(120)  # Check every minute
 
 if __name__ == "__main__":
     logger.info("Adzuna job fetching automation started")
