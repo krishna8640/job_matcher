@@ -1,35 +1,30 @@
-"""
-AI Job Matcher - FastAPI Backend
-
-This file contains the API endpoints for the AI Job Matcher application.
-It handles resume uploads, text searches, and returns job matches.
-"""
-
+import logging
+import os
+import sys
 from fastapi import FastAPI, UploadFile, File, HTTPException, Form
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import List, Optional
 import tempfile
-import os
 import shutil
-import sys
 
-# Add the job_search package to path
+# Ensure job_search is on PYTHONPATH (for local development)
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(project_root)
-print(f"Added {project_root} to Python path")
-print(f"Current sys.path: {sys.path}")
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
-  # Adjust this path as needed for your environment
+# Application logger
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # Import job_search modules
 from job_search.resume_parser import get_resume_text
 from job_search.job_matcher import search_jobs
+from job_search.index_cache import IndexCache
 
-# Define response models
 class JobResult(BaseModel):
     """Model for a job search result."""
-    job_id: int
+    job_id: str = Field(..., description="Job identifier as text")
     title: str
     company: str
     location: Optional[str] = "Not specified"
@@ -44,151 +39,141 @@ class SearchResponse(BaseModel):
     """Model for search response."""
     results: List[JobResult]
     total: int
-    page: int  
+    page: int
     total_pages: int
     query_type: str
     query_text: str
 
-# Create FastAPI app
 app = FastAPI(
     title="AI Job Matcher API",
     description="Match resumes with job postings using AI",
     version="1.0.0"
 )
 
-# Add CORS middleware to allow requests from frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # For development; restrict in production
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-@app.get("/")
-def read_root():
-    """Root endpoint that returns API status."""
-    return {"status": "AI Job Matcher API is running", "version": "1.0.0"}
+@app.on_event("startup")
+async def startup_event():
+    """Initialize resources at application startup."""
+    logger.info("Pre-loading FAISS index...")
+    IndexCache.get_instance().load_index()
+    logger.info("Startup initialization complete.")
 
-@app.get("/search/text", response_model=SearchResponse)
-async def search_by_text(query: str, limit: int = 10, page: int = 1):
-    """
-    Search for jobs using a text query with pagination.
-    
-    Args:
-        query: Text query for job search
-        limit: Maximum number of results to return per page
-        page: Page number to return
-        
-    Returns:
-        SearchResponse: Job search results with pagination
-    """
+@app.get("/", tags=["Health"])
+def read_root():
+    """Health check endpoint."""
+    return {"status": "AI Job Matcher API is running", "version": app.version}
+
+@app.get("/search/text", response_model=SearchResponse, tags=["Search"])
+async def search_by_text(
+    query: str,
+    limit: int = 10,
+    page: int = 1
+):
+    """Search for jobs using a text query with pagination."""
     try:
-        # Search for matching jobs using FAISS with pagination
+        logger.info(f"Text search: '{query}', page={page}, limit={limit}")
         search_result = search_jobs(query, top_k=200, page=page, limit=limit)
-        
-        # Format results for response
-        formatted_results = []
+
+        formatted = []
         for job in search_result["results"]:
-            description = job.get("description", "")
-            formatted_results.append(JobResult(
-                job_id=job["job_id"],
-                title=job["title"],
-                company=job["company"],
-                location=job.get("location_long", job.get("location_short", "Not specified")),
-                similarity_score=job["similarity_score"],
-                job_type=job.get("job_category", "Not specified"),  
+            desc = job.get("description", "")
+            formatted.append(JobResult(
+                job_id=str(job.get("job_id")),
+                title=job.get("title", ""),
+                company=job.get("company", ""),
+                location=job.get("location", "Not specified"),
+                similarity_score=job.get("similarity_score", 0.0),
+                job_type=job.get("job_type", "Not specified"),
                 salary_range=job.get("salary_range", "Not specified"),
-                description=description,
-                description_preview=description[:200] + "..." if len(description) > 200 else description,
-                url=job.get("url", None)  
+                description=desc,
+                description_preview=(desc[:200] + "...") if len(desc) > 200 else desc,
+                url=job.get("url")
             ))
-        
+
         return SearchResponse(
-            results=formatted_results,
-            total=search_result["total"],
-            page=search_result["page"],
-            total_pages=search_result["total_pages"],
+            results=formatted,
+            total=search_result.get("total", 0),
+            page=search_result.get("page", page),
+            total_pages=search_result.get("total_pages", 1),
             query_type="text",
             query_text=query
         )
-    except Exception as e:
-        # Return error details to client
-        raise HTTPException(status_code=500, detail=f"Error searching jobs: {str(e)}")
+    except Exception:
+        logger.exception("Error during text search")
+        raise HTTPException(status_code=500, detail="Internal server error")
 
-@app.post("/search/resume", response_model=SearchResponse)
-async def search_by_resume(file: UploadFile = File(...), limit: int = Form(10), page: int = Form(1)):
-    """
-    Search for jobs by uploading a resume with pagination.
-    
-    Args:
-        file: Uploaded resume file (PDF or DOCX)
-        limit: Maximum number of results to return per page
-        page: Page number to return
-        
-    Returns:
-        SearchResponse: Job search results with pagination
-    """
-    # Check file extension
+@app.post("/search/resume", response_model=SearchResponse, tags=["Search"])
+async def search_by_resume(
+    file: UploadFile = File(...),
+    limit: int = Form(10),
+    page: int = Form(1)
+):
+    """Search for jobs by uploading a resume with pagination."""
     file_ext = os.path.splitext(file.filename)[1].lower()
     if file_ext not in ['.pdf', '.docx']:
         raise HTTPException(status_code=400, detail="Only PDF and DOCX files are supported")
-    
-    # Create temporary file to store the upload
+
     temp_dir = tempfile.mkdtemp()
-    temp_file_path = os.path.join(temp_dir, file.filename)
-    
+    temp_path = os.path.join(temp_dir, file.filename)
     try:
-        # Save uploaded file to temp location
-        with open(temp_file_path, "wb") as f:
-            shutil.copyfileobj(file.file, f)
-        
-        # Extract text based on file type
-        if file_ext == '.pdf':
-            resume_text = get_resume_text(pdf_path=temp_file_path)
-        else:
-            resume_text = get_resume_text(docx_path=temp_file_path)
-        
+        with open(temp_path, 'wb') as buffer:
+            shutil.copyfileobj(file.file, buffer)
+
+        resume_text = (
+            get_resume_text(pdf_path=temp_path)
+            if file_ext == '.pdf' else
+            get_resume_text(docx_path=temp_path)
+        )
         if not resume_text:
-            raise HTTPException(status_code=400, detail="Failed to extract text from resume")
-        
-        # Search for matching jobs with pagination
+            raise HTTPException(status_code=400, detail="Failed to extract text from resume.")
+
+        logger.info(f"Resume search: {file.filename}, page={page}, limit={limit}")
         search_result = search_jobs(resume_text, top_k=50, page=page, limit=limit)
-        
-        # Format results
-        formatted_results = []
+
+        formatted = []
         for job in search_result["results"]:
-            description = job.get("description", "")
-            formatted_results.append(JobResult(
-                job_id=job["job_id"],
-                title=job["title"],
-                company=job["company"],
-                location=job.get("location_long", job.get("location_short", "Not specified")),
-                similarity_score=job["similarity_score"],
-                job_type=job.get("job_category", "Not specified"),
+            desc = job.get("description", "")
+            formatted.append(JobResult(
+                job_id=str(job.get("job_id")),
+                title=job.get("title", ""),
+                company=job.get("company", ""),
+                location=job.get("location", "Not specified"),
+                similarity_score=job.get("similarity_score", 0.0),
+                job_type=job.get("job_type", "Not specified"),
                 salary_range=job.get("salary_range", "Not specified"),
-                description=description,
-                description_preview=description[:200] + "..." if len(description) > 200 else description,
-                url=job.get("url", None)
+                description=desc,
+                description_preview=(desc[:200] + "...") if len(desc) > 200 else desc,
+                url=job.get("url")
             ))
-        
+
         return SearchResponse(
-            results=formatted_results,
-            total=search_result["total"],
-            page=search_result["page"],
-            total_pages=search_result["total_pages"],
+            results=formatted,
+            total=search_result.get("total", 0),
+            page=search_result.get("page", page),
+            total_pages=search_result.get("total_pages", 1),
             query_type="resume",
-            query_text=f"Resume: {file.filename}"
+            query_text=file.filename
         )
     except HTTPException:
-        raise  # Re-raise HTTP exceptions
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error processing resume: {str(e)}")
+        raise
+    except Exception:
+        logger.exception("Error during resume search")
+        raise HTTPException(status_code=500, detail="Internal server error")
     finally:
-        # Clean up temporary files
-        shutil.rmtree(temp_dir)
+        shutil.rmtree(temp_dir, ignore_errors=True)
 
-# Run the application with uvicorn when script is executed directly
-#if __name__ == "__main__":
-#    import uvicorn
-#   uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(
+        "api.app:app",
+        host="0.0.0.0",
+        port=8000,
+        reload=True
+    )
